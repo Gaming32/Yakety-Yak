@@ -1,0 +1,1 @@
+I recommend installe PyAudio from here: https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio
