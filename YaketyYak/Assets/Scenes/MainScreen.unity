@@ -521,6 +521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yaketyYak: {fileID: 11400000, guid: fe79bbf6c9ae65946a471b8b6f2e5f79, type: 2}
+  ipText: {fileID: 913778496}
 --- !u!4 &994614078
 Transform:
   m_ObjectHideFlags: 0
