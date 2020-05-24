@@ -7,18 +7,21 @@ using UnityEngine.Networking;
 public class YaketyYakManager : MonoBehaviour
 {
     public YaketyYak yaketyYak;
+    public Text ipComponent;
 
     NetworkManager networkManager;
 
     public void Start()
     {
+        ipComponent.text = PlayerPrefs.GetString("lastAddress", "");
         networkManager = GetComponent<NetworkManager>();
         networkManager.networkPort = yaketyYak.port;
     }
 
-    public void OnConnect(Text ipComponent)
+    public void OnConnect()
     {
         string ip = ipComponent.text;
+        PlayerPrefs.SetString("lastAddress", ip);
         Debug.Log("Connecting to " + ip + " port " + yaketyYak.port.ToString() + "...");
         networkManager.networkAddress = ip;
         networkManager.StartClient();
