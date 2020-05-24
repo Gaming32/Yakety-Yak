@@ -28,10 +28,17 @@ public class YaketyYakNetworkManager : NetworkManager
         infoLabel.text = "Host Started!";
     }
 
-    public override void OnClientConnect(NetworkConnection conn)
+    public override void OnStartClient(NetworkClient client)
     {
-        base.OnClientConnect(conn);
+        base.OnStartClient(client);
         Debug.Log("Connected!");
         infoLabel.text = "Connected successfully!";
+    }
+
+    public override void OnStopClient()
+    {
+        base.OnStopClient();
+        Debug.Log("Disconnected");
+        infoLabel.text = "Disconnected";
     }
 }

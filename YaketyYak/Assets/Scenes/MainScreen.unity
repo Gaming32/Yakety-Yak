@@ -521,6 +521,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yaketyYak: {fileID: 11400000, guid: fe79bbf6c9ae65946a471b8b6f2e5f79, type: 2}
+  hostButton: {fileID: 1180692925}
+  controlButton: {fileID: 931674963}
   ipComponent: {fileID: 913778496}
 --- !u!4 &994614078
 Transform:
@@ -867,7 +869,7 @@ GameObject:
   - component: {fileID: 1180692926}
   - component: {fileID: 1180692925}
   m_Layer: 5
-  m_Name: Host Button
+  m_Name: HostButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
