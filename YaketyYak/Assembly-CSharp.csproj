@@ -64,7 +64,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\OtherCode\YaketyYak.cs" />
-    <Compile Include="Assets\Scripts\NetworkUser.cs" />
     <Compile Include="Assets\Scripts\YaketyYakManager.cs" />
     <Compile Include="Assets\Scripts\YaketyYakNetworkManager.cs" />
     <Reference Include="UnityEngine">

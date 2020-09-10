@@ -444,10 +444,10 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 994614077}
         m_MethodName: OnConnect
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 913778496}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -521,9 +521,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yaketyYak: {fileID: 11400000, guid: fe79bbf6c9ae65946a471b8b6f2e5f79, type: 2}
-  hostButton: {fileID: 1180692925}
-  controlButton: {fileID: 931674963}
-  ipComponent: {fileID: 913778496}
 --- !u!4 &994614078
 Transform:
   m_ObjectHideFlags: 0
@@ -559,9 +556,8 @@ MonoBehaviour:
   m_ScriptCRCCheck: 1
   m_MaxDelay: 0.01
   m_LogLevel: 2
-  m_PlayerPrefab: {fileID: 8906680441640968513, guid: d15ac96340310cb4bbabf78d0bdf907f,
-    type: 3}
-  m_AutoCreatePlayer: 1
+  m_PlayerPrefab: {fileID: 0}
+  m_AutoCreatePlayer: 0
   m_PlayerSpawnMethod: 0
   m_OfflineScene: 
   m_OnlineScene: 
@@ -608,7 +604,7 @@ MonoBehaviour:
     m_MaxTimerTimeout: 12000
     m_MinNetSimulatorTimeout: 1
     m_MaxNetSimulatorTimeout: 12000
-  m_Channels: 0500000000000000
+  m_Channels: 
   m_UseWebSockets: 0
   m_UseSimulator: 0
   m_SimulatedLatency: 1
@@ -657,7 +653,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -30}
+  m_AnchoredPosition: {x: 0, y: -20}
   m_SizeDelta: {x: 350, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1087758245
@@ -686,7 +682,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -870,7 +866,7 @@ GameObject:
   - component: {fileID: 1180692926}
   - component: {fileID: 1180692925}
   m_Layer: 5
-  m_Name: HostButton
+  m_Name: Host Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
