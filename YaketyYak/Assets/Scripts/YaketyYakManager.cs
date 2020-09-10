@@ -2,31 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Networking;
 
 public class YaketyYakManager : MonoBehaviour
 {
     public YaketyYak yaketyYak;
+    public string key;
 
-    NetworkManager networkManager;
+    //NetworkManager networkManager;
+    LiteNetServer server;
+    LiteNetClient client;
 
-    public void Start()
+    public void Awake()
     {
-        networkManager = GetComponent<NetworkManager>();
-        networkManager.networkPort = yaketyYak.port;
+        //networkManager = GetComponent<NetworkManager>();
+        //networkManager.networkPort = yaketyYak.port;
+        server = GetComponent<LiteNetServer>();
+        client = GetComponent<LiteNetClient>();
     }
 
     public void OnConnect(Text ipComponent)
     {
         string ip = ipComponent.text;
         Debug.Log("Connecting to " + ip + " port " + yaketyYak.port.ToString() + "...");
-        networkManager.networkAddress = ip;
-        networkManager.StartClient();
+        client.StartClient(ip, yaketyYak.port, key);
+        //networkManager.networkAddress = ip;
+        //networkManager.StartClient();
     }
 
     public void OnHost()
     {
         Debug.Log("Hosting on 0.0.0.0 port " + yaketyYak.port.ToString() + "...");
-        networkManager.StartHost();
+        server.StartServer(yaketyYak.port, key);
+        client.StartClient("127.0.0.1", yaketyYak.port, key);
+        //networkManager.StartHost();
     }
 }
