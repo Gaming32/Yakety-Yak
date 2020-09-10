@@ -1,8 +1,7 @@
-﻿using LiteNetLib;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
+using LiteNetLib;
 using LiteNetLib.Utils;
 
 public class LiteNetClient : MonoBehaviour
@@ -10,7 +9,7 @@ public class LiteNetClient : MonoBehaviour
     EventBasedNetListener netListener;
     NetManager netManager;
 
-    AudioSource audioSource;
+    public AudioSource audioSource;
 
     bool clientStarted;
 
@@ -45,9 +44,9 @@ public class LiteNetClient : MonoBehaviour
     {
         NetDataWriter writer = new NetDataWriter();
         while (true) {
-            AudioClip audioClip = Microphone.Start("", false, 1, 126);
-            yield return new WaitForSecondsRealtime(126f/44100f);
-            float[] sendData = new float[126];
+            AudioClip audioClip = Microphone.Start("", false, 1, 125);
+            yield return new WaitForSecondsRealtime(125f/44100f);
+            float[] sendData = new float[125];
             audioClip.GetData(sendData, 0);
             writer.Reset();
             writer.PutArray(sendData);
@@ -60,7 +59,7 @@ public class LiteNetClient : MonoBehaviour
         float[] readData = dataReader.GetFloatArray();
         dataReader.Recycle();
 
-        AudioClip audioClip = AudioClip.Create("PersonMicrophone", 126, 1, 44100, false);
+        AudioClip audioClip = AudioClip.Create("PersonMicrophone", 125, 1, 44100, false);
         audioClip.SetData(readData, 0);
         audioSource.PlayOneShot(audioClip);
     }
